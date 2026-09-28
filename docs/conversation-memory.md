@@ -133,18 +133,16 @@ Fix:
 
 The shipping jar is the **root** project's jar,
 `artifacts/<version>/<version>+NNN/SignPicture-<version>.jar`.
-It embeds the reobfuscated BnnWidget plus the per-version `1.12.2.jar` diff jar.
-The subproject jar `SignPicture-1.12.2-<version>-universal.jar` does NOT contain BnnWidget and will
-throw `NoClassDefFoundError: net/teamfruit/bnnwidget/WFrame` — do not ship that one.
+It is a flat 1.12.2 fat jar containing the reobfuscated BnnWidget classes directly.
 
-Latest build (2026-08-22, sign NBT crash fix + 3.1.1 bump), `bash gradlew -I <init.gradle> build` on zulu-8:
+Latest build (2026-09-08, 1.12.2-only cleanup), `bash build.sh --offline` on zulu-8:
 
-- `artifacts/3.1.1/3.1.1+001/SignPicture-3.1.1.jar`
+- `artifacts/3.1.1/3.1.1+008/SignPicture-3.1.1.jar`
 
 SHA-256:
 
 ```text
-1b03815d505abf3e03bcd1ebcb2294d602f77cf4600b8c2e5fe1d25c84777cb4
+32d3a8b4825e84f67d8b92208346c21463f78fd3a2bf4d889fd6051fc6f8c7f4
 ```
 
 Verified in the built jar:
@@ -158,3 +156,11 @@ Verified in the built jar:
 - `Compat$CompatTextComponent.getUnformattedText` null-checks before `func_150260_c()`.
 - The ASM render-distance hook still carries `16384.0d`.
 - `mcmod.info` carries no version field (by design — Forge reads it from `@Mod`); no duplicate zip entries.
+
+## 1.12.2-only Cleanup (2026-09-08)
+
+- Removed the `1.7.10`, `1.8.9`, `1.9.4`, `1.10.2`, and `1.11.2` subprojects.
+- Removed `common` after replacing the multi-version wrapper with a flat 1.12.2 fat jar.
+- Removed GitHub, Bintray, and CurseForge publishing plugins/tasks plus unused development artifacts.
+- Vendored BnnWidget because the original TeamFruit Bintray repository is no longer available.
+- The shipping build is now `bash build.sh`; pass `--offline` after dependencies have been cached.

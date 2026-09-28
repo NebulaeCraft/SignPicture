@@ -110,6 +110,7 @@ run/
 
 # Package Files #
 *.jar
+!1.12.2/libs/shade/*.jar
 *.war
 *.nar
 *.ear
