@@ -1,0 +1,10 @@
+{
+  "signpic.retry.title": "SignPicture",
+  "signpic.retry.reload": "重新加载",
+  "signpic.retry.redownload": "重新下载",
+  "signpic.retry.idle": "等待加载图片",
+  "signpic.retry.loading": "正在加载图片…",
+  "signpic.retry.ready": "图片已加载",
+  "signpic.retry.failed": "图片加载失败",
+  "signpic.retry.busy": "图片加载繁忙，请稍后重试。"
+}

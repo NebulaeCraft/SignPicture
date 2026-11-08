@@ -1,0 +1,10 @@
+{
+  "signpic.retry.title": "SignPicture",
+  "signpic.retry.reload": "Reload",
+  "signpic.retry.redownload": "Redownload",
+  "signpic.retry.idle": "Waiting to load image",
+  "signpic.retry.loading": "Loading image…",
+  "signpic.retry.ready": "Image loaded",
+  "signpic.retry.failed": "Image could not be loaded",
+  "signpic.retry.busy": "Image loader is busy. Try again shortly."
+}

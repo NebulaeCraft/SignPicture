@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "net.teamfruit.signpic.fabric.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["SignRendererMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
